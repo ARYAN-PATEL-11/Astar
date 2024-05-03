@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-Astar-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend-Astar-container
+          image: aryanpatel111/Astar-shortest-path-finder
+          ports:
+            - containerPort: 8082

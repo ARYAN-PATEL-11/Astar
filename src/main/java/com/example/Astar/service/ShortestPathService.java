@@ -4,12 +4,17 @@ import com.example.Astar.model.ShortestPathResult;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
+
 
 import java.util.*;
 
 @Service
 public class ShortestPathService {
+
+    private static final Logger logger = LogManager.getLogger(ShortestPathService.class);
 
     private static final Map<String, List<Edge>> graph = new HashMap<>();
 
@@ -60,6 +65,7 @@ public class ShortestPathService {
     }
 
     public ShortestPathResult findShortestPath(String start, String end) {
+        logger.info("Finding shortest path from {} to {}", start, end);
         Map<String, Integer> gScore = new HashMap<>();
         Map<String, Integer> fScore = new HashMap<>();
         Map<String, String> cameFrom = new HashMap<>();
@@ -93,6 +99,7 @@ public class ShortestPathService {
                 }
             }
         }
+//        logger.info("Shortest path found: {}", shortestPath);
 
         return new ShortestPathResult(Collections.emptyList()); // No path found
     }
@@ -174,6 +181,7 @@ public class ShortestPathService {
         } catch (JsonProcessingException e) {
             // Handle parsing exception
             e.printStackTrace();
+            logger.error("Error parsing graph data: {}", e.getMessage());
             return null;
         }
     }

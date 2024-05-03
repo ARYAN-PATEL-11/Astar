@@ -1,0 +1,10 @@
+---
+- name: Deploy Spring Boot Astar Application
+  hosts: localhost
+  remote_user: aryanpatel
+  tasks:
+    - name: Deploy Docker image and Kubernetes resources for spemajorf
+      become: false
+      shell: kubectl apply -f "{{ item }}"
+      with_fileglob:
+        - kubernetes/*.yaml
