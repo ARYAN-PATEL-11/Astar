@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_REGISTRY_CREDENTIALS = 'DockerHubCred'
-        DOCKER_IMAGE_NAME = 'Astar-shortest-path-finder'
+        DOCKER_IMAGE_NAME = 'astar-shortest-path-finder'
     }
 
     stages {
