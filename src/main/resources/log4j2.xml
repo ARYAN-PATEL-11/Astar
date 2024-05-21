@@ -33,7 +33,7 @@
             <AppenderRef ref="File"/>
         </Logger>
 
-        <!-- Adjust log levels for Spring Boot auto-configuration to WARN or ERROR to reduce noise -->
+        <!-- Adjust log levels for Spring Boot auto-configuration for WARN or ERROR to reduce noise -->
         <Logger name="org.springframework.boot.autoconfigure" level="warn" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="File"/>
