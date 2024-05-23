@@ -29,3 +29,7 @@
   <p align="center">
   <img width="513" alt="dashboard" src="https://github.com/23subbhashit/SPEmajorF/assets/43717493/fdaceba9-7aec-4ba6-b0b4-7dc082fda996">
   </p>
+- You can also check the jenkins pipeline for the progress
+  <p align="center">
+  <img width="513" alt="jenkins" src="">
+  </p>
