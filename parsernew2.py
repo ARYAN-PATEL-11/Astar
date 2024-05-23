@@ -35,7 +35,7 @@ def parse_log_line(line):
     else:
         return {"message": line.strip()}
 
-# Read log file and index each line as a document in Elasticsearch
+# Read log file and index each line as document in Elasticsearch
 with open(log_file_path, 'r') as log_file:
     for doc_id, line in enumerate(log_file, start=1):
         doc_body = parse_log_line(line)
